@@ -1,6 +1,29 @@
-<p>todo-list works!</p>
-<div *ngFor="let task of todoList">
-  {{task.taskDesc}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    <div *ngFor="let task of todoList" class="card">
+      <div class="row g-0">
+        <div class="col-md-10">
+          <div class="card-body ">
+            <!-- <h5 class="card-title">{{task.taskDesc}}</h5> -->
+            <h6 class="card-text">{{task.taskDesc}}</h6>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card-body">
+            <div class="btn-group" role="group" aria-label="Button group">
+              <button type="button" class="btn btn-primary">Done</button>
+              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
 </div>
 
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
