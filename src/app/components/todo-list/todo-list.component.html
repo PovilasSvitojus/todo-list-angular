@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col">
 
+      <div class="input-group mb-3">
+        <input type="text" [(ngModel)]="newTask.taskDesc" class="form-control" placeholder="Add a new task..." aria-label="Add a new task" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+      </div>
+
+
     <div *ngFor="let task of todoList" class="card">
       <div class="row g-0">
         <div class="col-md-10">

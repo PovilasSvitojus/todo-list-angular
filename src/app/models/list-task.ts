@@ -1,5 +1,5 @@
 export interface ListTask {
-  taskId: number;
+  taskId?: number;
   taskDesc: string;
   taskStatus: string;
 }
