@@ -15,4 +15,16 @@ export class TodoListService {
   getAll(): Observable<ListTask[]> {
     return this.http.get<ListTask[]>(this.baseUrl + 'tasks');
   }
+
+  addNewTask(newTask: ListTask): Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'tasks', newTask, {observe: 'response'});
+  }
+
+  editTask(taskToEdit: ListTask): Observable<any> {
+    return this.http.put<any>(this.baseUrl + 'tasks/' + taskToEdit.taskId, taskToEdit, {observe: 'response'});
+  }
+
+  removeTask(taskToRemove: ListTask): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + 'tasks/' + taskToRemove.taskId, {observe: 'response'});
+  }
 }

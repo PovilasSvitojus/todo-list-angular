@@ -4,29 +4,35 @@
 
       <div class="input-group mb-3">
         <input type="text" [(ngModel)]="newTask.taskDesc" class="form-control" placeholder="Add a new task..." aria-label="Add a new task" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+        <button class="btn btn-outline-secondary" type="button" (click)="addNewTask(newTask)" id="button-addon2">Add</button>
       </div>
 
 
-    <div *ngFor="let task of todoList" class="card">
-      <div class="row g-0">
-        <div class="col-md-10">
-          <div class="card-body ">
-            <!-- <h5 class="card-title">{{task.taskDesc}}</h5> -->
-            <h6 class="card-text">{{task.taskDesc}}</h6>
+      <div *ngFor="let task of todoList" class="card">
+        <div class="row g-0">
+          <div class="col-md-9">
+            <div class="card-body ">
+              <h6 class="card-text" *ngIf="editTaskId != task.taskId">{{task.taskDesc}}</h6>
+              <input type="text" *ngIf="editTaskId == task.taskId" [(ngModel)]="task.taskDesc" placeholder={{task.taskDesc}}>
+            </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card-body">
-            <div class="btn-group" role="group" aria-label="Button group">
-              <button type="button" class="btn btn-primary">Done</button>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-primary">Delete</button>
+          <div class="col-md-3">
+            <div class="card-body">
+              <div class="btn-group" role="group" aria-label="Button group" *ngIf="editTaskId != task.taskId">
+                <button type="button" class="btn btn-danger" (click)="setStatusNotStarted(task)" [disabled]="task.taskStatus == 'Not Started'">Not Started</button>
+                <button type="button" class="btn btn-warning" (click)="setStatusStarted(task)" [disabled]="task.taskStatus == 'Started'">In Progress</button>
+                <button type="button" class="btn btn-success" (click)="setStatusCompleted(task)" [disabled]="task.taskStatus == 'Completed'">Done</button>
+                <button type="button" class="btn btn-primary" (click)="editTask(task)">Edit</button>
+                <button type="button" class="btn btn-primary" (click)="removeTask(task)">Delete</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Button group" *ngIf="editTaskId == task.taskId">
+                <button type="button" class="btn btn-primary" (click)="editComplete(task)">Done</button>
+                <button type="button" class="btn btn-primary" (click)="editCancel(task)">Cancel</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     </div>
   </div>
