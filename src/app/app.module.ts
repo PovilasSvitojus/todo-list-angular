@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -18,7 +19,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
     //BrowserAnimationsModule
   ],
   providers: [],

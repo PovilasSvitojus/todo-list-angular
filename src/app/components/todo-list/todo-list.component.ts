@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListTask } from 'src/app/models/list-task';
 import { TodoListService } from 'src/app/services/todo-list.service';
+import { faSpinner, faCheck, faPen, faXmark, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,6 +17,14 @@ export class TodoListComponent implements OnInit {
   todoList: ListTask[] = [];
   editTaskId: number = 0;
   editTaskOriginalDesc: string = '';
+
+  //icons
+  faSpinner = faSpinner;
+  faCheck = faCheck;
+  faPen = faPen;
+  faXmark = faXmark;
+  faTrash = faTrash;
+  faPlus = faPlus;
 
   constructor(private todoListService: TodoListService) { }
 

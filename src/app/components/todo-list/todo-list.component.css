@@ -1,0 +1,34 @@
+.title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.hover-buttons {
+  opacity: 0;
+  height: 0;
+  width: 0px;
+  overflow: hidden;
+  transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+  -webkit-transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+  -moz-transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+}
+
+.card:hover .hover-buttons {
+  opacity: 1;
+  height: 100%;
+  width: 140px;
+  transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+  -webkit-transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+  -moz-transition: height 0ms 400ms, opacity 400ms 0ms, width 400ms 0ms;
+}
+
+.card {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.new-task {
+  margin-bottom: 30px;
+}
+
